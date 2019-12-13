@@ -1,0 +1,8 @@
+// http[s]?:\/\/(www\.)?[-a-zA-Z0-9]+\.[-a-zA-Z0-9]+\/[-a-zA-Z0-9%#\?=&\.\/:\+_]*
+rule yara_rule
+    {
+        strings:
+            $domain = /\x01http[s]?:\/\/(www\.)?[-a-zA-Z0-9]+\.[-a-zA-Z0-9]+\/[-a-zA-Z0-9%#\?=&\.\/:\+_]*/
+        condition:
+            $domain
+    }
